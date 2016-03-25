@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6835BCC41CA55C9000316F14 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835BCC31CA55C9000316F14 /* Country.m */; };
+		6835BCC71CA55ED500316F14 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835BCC61CA55ED500316F14 /* DataManager.m */; };
+		6835BCCA1CA59B6000316F14 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835BCC91CA59B6000316F14 /* CoreDataTableViewController.m */; };
+		6835BCCC1CA5A39300316F14 /* TakeMeToTrip.json in Resources */ = {isa = PBXBuildFile; fileRef = 6835BCCB1CA5A39300316F14 /* TakeMeToTrip.json */; };
+		6835BCCF1CA5CD1B00316F14 /* CountriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835BCCE1CA5CD1B00316F14 /* CountriesController.m */; };
 		68DF737D1CA5577A00F55328 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF737C1CA5577A00F55328 /* main.m */; };
 		68DF73801CA5577A00F55328 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF737F1CA5577A00F55328 /* AppDelegate.m */; };
-		68DF73831CA5577B00F55328 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF73821CA5577B00F55328 /* ViewController.m */; };
+		68DF73831CA5577B00F55328 /* TownsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF73821CA5577B00F55328 /* TownsController.m */; };
 		68DF73861CA5577B00F55328 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68DF73841CA5577B00F55328 /* Main.storyboard */; };
 		68DF73891CA5577B00F55328 /* HackatoN.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68DF73871CA5577B00F55328 /* HackatoN.xcdatamodeld */; };
 		68DF738B1CA5577B00F55328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68DF738A1CA5577B00F55328 /* Assets.xcassets */; };
 		68DF738E1CA5577B00F55328 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68DF738C1CA5577B00F55328 /* LaunchScreen.storyboard */; };
 		68DF73991CA5577B00F55328 /* HackatoNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF73981CA5577B00F55328 /* HackatoNTests.m */; };
 		68DF73A41CA5577B00F55328 /* HackatoNUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF73A31CA5577B00F55328 /* HackatoNUITests.m */; };
+		68DF73B61CA55A0F00F55328 /* Town.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF73B51CA55A0F00F55328 /* Town.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +42,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6835BCC11CA55C9000316F14 /* Country+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Country+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6835BCC21CA55C9000316F14 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		6835BCC31CA55C9000316F14 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		6835BCC51CA55ED500316F14 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		6835BCC61CA55ED500316F14 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		6835BCC81CA59B6000316F14 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		6835BCC91CA59B6000316F14 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		6835BCCB1CA5A39300316F14 /* TakeMeToTrip.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TakeMeToTrip.json; sourceTree = "<group>"; };
+		6835BCCD1CA5CD1B00316F14 /* CountriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesController.h; sourceTree = "<group>"; };
+		6835BCCE1CA5CD1B00316F14 /* CountriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesController.m; sourceTree = "<group>"; };
 		68DF73781CA5577A00F55328 /* HackatoN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackatoN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DF737C1CA5577A00F55328 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		68DF737E1CA5577A00F55328 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		68DF737F1CA5577A00F55328 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		68DF73811CA5577A00F55328 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		68DF73821CA5577B00F55328 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		68DF73811CA5577A00F55328 /* TownsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TownsController.h; sourceTree = "<group>"; };
+		68DF73821CA5577B00F55328 /* TownsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TownsController.m; sourceTree = "<group>"; };
 		68DF73851CA5577B00F55328 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68DF73881CA5577B00F55328 /* HackatoN.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackatoN.xcdatamodel; sourceTree = "<group>"; };
 		68DF738A1CA5577B00F55328 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +69,9 @@
 		68DF739F1CA5577B00F55328 /* HackatoNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackatoNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DF73A31CA5577B00F55328 /* HackatoNUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackatoNUITests.m; sourceTree = "<group>"; };
 		68DF73A51CA5577B00F55328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68DF73B31CA55A0F00F55328 /* Town+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Town+CoreDataProperties.h"; sourceTree = "<group>"; };
+		68DF73B41CA55A0F00F55328 /* Town.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Town.h; sourceTree = "<group>"; };
+		68DF73B51CA55A0F00F55328 /* Town.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Town.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +99,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6835BCD01CA5CDF200316F14 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				68DF73811CA5577A00F55328 /* TownsController.h */,
+				68DF73821CA5577B00F55328 /* TownsController.m */,
+				6835BCCD1CA5CD1B00316F14 /* CountriesController.h */,
+				6835BCCE1CA5CD1B00316F14 /* CountriesController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		68DF736F1CA5577A00F55328 = {
 			isa = PBXGroup;
 			children = (
@@ -103,15 +133,12 @@
 		68DF737A1CA5577A00F55328 /* HackatoN */ = {
 			isa = PBXGroup;
 			children = (
+				68DF73B21CA559FC00F55328 /* Model */,
 				68DF737E1CA5577A00F55328 /* AppDelegate.h */,
 				68DF737F1CA5577A00F55328 /* AppDelegate.m */,
-				68DF73811CA5577A00F55328 /* ViewController.h */,
-				68DF73821CA5577B00F55328 /* ViewController.m */,
+				6835BCD01CA5CDF200316F14 /* Controllers */,
 				68DF73841CA5577B00F55328 /* Main.storyboard */,
-				68DF738A1CA5577B00F55328 /* Assets.xcassets */,
-				68DF738C1CA5577B00F55328 /* LaunchScreen.storyboard */,
-				68DF738F1CA5577B00F55328 /* Info.plist */,
-				68DF73871CA5577B00F55328 /* HackatoN.xcdatamodeld */,
+				68DF73B11CA559F100F55328 /* CoreData */,
 				68DF737B1CA5577A00F55328 /* Supporting Files */,
 			);
 			path = HackatoN;
@@ -120,6 +147,10 @@
 		68DF737B1CA5577A00F55328 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				68DF738C1CA5577B00F55328 /* LaunchScreen.storyboard */,
+				68DF738A1CA5577B00F55328 /* Assets.xcassets */,
+				68DF738F1CA5577B00F55328 /* Info.plist */,
+				6835BCCB1CA5A39300316F14 /* TakeMeToTrip.json */,
 				68DF737C1CA5577A00F55328 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -141,6 +172,31 @@
 				68DF73A51CA5577B00F55328 /* Info.plist */,
 			);
 			path = HackatoNUITests;
+			sourceTree = "<group>";
+		};
+		68DF73B11CA559F100F55328 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				68DF73871CA5577B00F55328 /* HackatoN.xcdatamodeld */,
+				6835BCC51CA55ED500316F14 /* DataManager.h */,
+				6835BCC61CA55ED500316F14 /* DataManager.m */,
+				6835BCC81CA59B6000316F14 /* CoreDataTableViewController.h */,
+				6835BCC91CA59B6000316F14 /* CoreDataTableViewController.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		68DF73B21CA559FC00F55328 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				68DF73B31CA55A0F00F55328 /* Town+CoreDataProperties.h */,
+				68DF73B41CA55A0F00F55328 /* Town.h */,
+				68DF73B51CA55A0F00F55328 /* Town.m */,
+				6835BCC11CA55C9000316F14 /* Country+CoreDataProperties.h */,
+				6835BCC21CA55C9000316F14 /* Country.h */,
+				6835BCC31CA55C9000316F14 /* Country.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +307,7 @@
 			files = (
 				68DF738E1CA5577B00F55328 /* LaunchScreen.storyboard in Resources */,
 				68DF738B1CA5577B00F55328 /* Assets.xcassets in Resources */,
+				6835BCCC1CA5A39300316F14 /* TakeMeToTrip.json in Resources */,
 				68DF73861CA5577B00F55328 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +333,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68DF73831CA5577B00F55328 /* ViewController.m in Sources */,
+				6835BCC41CA55C9000316F14 /* Country.m in Sources */,
+				6835BCCF1CA5CD1B00316F14 /* CountriesController.m in Sources */,
+				68DF73B61CA55A0F00F55328 /* Town.m in Sources */,
+				6835BCCA1CA59B6000316F14 /* CoreDataTableViewController.m in Sources */,
+				6835BCC71CA55ED500316F14 /* DataManager.m in Sources */,
+				68DF73831CA5577B00F55328 /* TownsController.m in Sources */,
 				68DF73801CA5577A00F55328 /* AppDelegate.m in Sources */,
 				68DF73891CA5577B00F55328 /* HackatoN.xcdatamodeld in Sources */,
 				68DF737D1CA5577A00F55328 /* main.m in Sources */,
@@ -503,6 +565,7 @@
 				68DF73AA1CA5577B00F55328 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68DF73AB1CA5577B00F55328 /* Build configuration list for PBXNativeTarget "HackatoNTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +574,7 @@
 				68DF73AD1CA5577B00F55328 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68DF73AE1CA5577B00F55328 /* Build configuration list for PBXNativeTarget "HackatoNUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +583,7 @@
 				68DF73B01CA5577B00F55328 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

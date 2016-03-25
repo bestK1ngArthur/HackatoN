@@ -8,15 +8,101 @@
 
 #import "AppDelegate.h"
 
+#import "Country.h"
+#import "Town.h"
+
+#import "DataManager.h"
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    // Deleting all instances of entity
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Country"];
+    NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
+    
+    NSError *deleteError = nil;
+    [[DataManager sharedManager].persistentStoreCoordinator executeRequest:delete
+                                                               withContext:[DataManager sharedManager].managedObjectContext
+                                                                     error:&deleteError];
+    
+    request = [[NSFetchRequest alloc] initWithEntityName:@"Town"];
+    delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
+    
+    deleteError = nil;
+    [[DataManager sharedManager].persistentStoreCoordinator executeRequest:delete
+                                                               withContext:[DataManager sharedManager].managedObjectContext
+                                                                     error:&deleteError];
+    
+     
+    // Finding json file
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"TakeMeToTrip" ofType:@"json"];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]){
+        
+        NSLog(@"Find json file");
+        
+        NSData *returnedData = [NSData dataWithContentsOfFile:filePath];
+        NSDictionary *dictionary = [self parseJsonFromData:returnedData];
+        
+        // Parsing countries
+        
+        NSArray *countries = [dictionary objectForKey:@"countries"];
+        NSArray *towns = [dictionary objectForKey:@"cities"];
+
+        for (NSDictionary *townDict in towns) {
+            
+            NSNumber *townCountryID = [townDict objectForKey:@"countryId"];
+            NSString *name = [townDict objectForKey:@"name"];
+            
+            NSLog(@"Parsing Town: %@", townCountryID);
+            
+            if (![name isEqualToString:@"0"]) {
+                
+                Town *town = [Town addTownWithName:name
+                                            townID:[townDict objectForKey:@"id"]
+                                         countryID:townCountryID
+                                          latitude:[townDict objectForKey:@"latitude"]
+                                         longitude:[townDict objectForKey:@"longitude"]];
+                
+            }
+            
+        }
+        
+        for (NSDictionary *countryDict in countries) {
+            
+            NSNumber *countryID = [countryDict objectForKey:@"id"];
+            
+            NSLog(@"Parsing Country: %@", countryID);
+            
+            Country *country = [Country addCountryWithName:[countryDict objectForKey:@"name"]
+                                                 countryID:countryID];
+            
+            NSArray * towns = [country findTownsByID];
+            [country addTowns:[NSSet setWithArray:towns]];
+        
+        }
+        
+        NSError *error = nil;
+        
+        NSManagedObjectContext *managedObjectContext = [[DataManager sharedManager] managedObjectContext];
+        
+        if (![managedObjectContext save:&error]) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+    
+    } else {
+        
+        NSLog(@"Json file not found");
+    
+    }
+    
     return YES;
 }
 
@@ -41,87 +127,109 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
 }
 
-#pragma mark - Core Data stack
+#pragma mark - Parsing
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
-- (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.artembelkov.HackatoN" in the application's documents directory.
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-}
-
-- (NSManagedObjectModel *)managedObjectModel {
-    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
-    if (_managedObjectModel != nil) {
-        return _managedObjectModel;
-    }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"HackatoN" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it.
-    if (_persistentStoreCoordinator != nil) {
-        return _persistentStoreCoordinator;
-    }
+- (NSDictionary *)parseJsonFromData:(NSData *)data {
     
-    // Create the coordinator and store
-    
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"HackatoN.sqlite"];
-    NSError *error = nil;
-    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        // Report any error we got.
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
-        dict[NSLocalizedFailureReasonErrorKey] = failureReason;
-        dict[NSUnderlyingErrorKey] = error;
-        error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-        // Replace this with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
-    return _persistentStoreCoordinator;
-}
-
-
-- (NSManagedObjectContext *)managedObjectContext {
-    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
-    }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (!coordinator) {
+    if(NSClassFromString(@"NSJSONSerialization")) {
+        
+        NSError *error = nil;
+        id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        
+        if (error) { /* JSON was malformed, act appropriately here */ }
+        
+        // the originating poster wants to deal with dictionaries;
+        // assuming you do too then something like this is the first
+        // validation step:
+        if ([object isKindOfClass:[NSDictionary class]]) {
+            
+            NSDictionary *results = object;
+            /* proceed with results as you like; the assignment to
+             an explicit NSDictionary * is artificial step to get
+             compile-time checking from here on down (and better autocompletion
+             when editing). You could have just made object an NSDictionary *
+             in the first place but stylistically you might prefer to keep
+             the question of type open until it's confirmed */
+            
+            return results;
+            
+        } else {
+            
+            /* there's no guarantee that the outermost object in a JSON
+             packet will be a dictionary; if we get here then it wasn't,
+             so 'object' shouldn't be treated as an NSDictionary; probably
+             you need to report a suitable error condition */
+            
+            return nil;
+        }
+        
+    } else {
+        
+        // the user is using iOS 4; we'll need to use a third-party solution.
+        // If you don't intend to support iOS 4 then get rid of this entire
+        // conditional and just jump straight to
+        // NSError *error = nil;
+        // [NSJSONSerialization JSONObjectWithData:...
+        
         return nil;
     }
-    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
-    return _managedObjectContext;
+    
 }
 
-#pragma mark - Core Data Saving support
+#pragma mark - Trash
 
-- (void)saveContext {
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil) {
-        NSError *error = nil;
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
+- (NSArray *)townsForCountryID:(NSNumber *)countryID {
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Town"
+                                              inManagedObjectContext:[DataManager sharedManager].managedObjectContext];
+    [request setEntity:entity];
+    // retrive the objects with a given value for a certain property
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"countryID == %@", countryID];
+    [request setPredicate:predicate];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:[DataManager sharedManager].managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
+    aFetchedResultsController.delegate = self;
+    
+    NSError *error = nil;
+    NSArray *result = [[DataManager sharedManager].managedObjectContext executeFetchRequest:request error:&error];
+    
+    if ((result != nil) && ([result count]) && (error == nil)){
+        
+        return [NSArray arrayWithArray:result];
+    
     }
+    else{
+        
+        /*
+        Town *town = (Town *)[NSEntityDescription insertNewObjectForEntityForName:@"Town" inManagedObjectContext:[DataManager sharedManager].managedObjectContext];
+        // setup your object attributes, for instance set its name
+        town.name = @"name"
+        
+        // save object
+        NSError *error;
+        if (![[self managedObjectContext] save:&error]) {
+            // Handle error
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            
+        }
+        
+        return object;
+        */
+        
+        return nil;
+         
+    }
+    
 }
 
 @end
