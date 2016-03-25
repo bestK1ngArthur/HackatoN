@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		68DF737D1CA5577A00F55328 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF737C1CA5577A00F55328 /* main.m */; };
+		68DF73801CA5577A00F55328 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF737F1CA5577A00F55328 /* AppDelegate.m */; };
+		68DF73831CA5577B00F55328 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF73821CA5577B00F55328 /* ViewController.m */; };
+		68DF73861CA5577B00F55328 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68DF73841CA5577B00F55328 /* Main.storyboard */; };
+		68DF73891CA5577B00F55328 /* HackatoN.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68DF73871CA5577B00F55328 /* HackatoN.xcdatamodeld */; };
+		68DF738B1CA5577B00F55328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68DF738A1CA5577B00F55328 /* Assets.xcassets */; };
+		68DF738E1CA5577B00F55328 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68DF738C1CA5577B00F55328 /* LaunchScreen.storyboard */; };
+		68DF73991CA5577B00F55328 /* HackatoNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF73981CA5577B00F55328 /* HackatoNTests.m */; };
+		68DF73A41CA5577B00F55328 /* HackatoNUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF73A31CA5577B00F55328 /* HackatoNUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		68DF73951CA5577B00F55328 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68DF73701CA5577A00F55328 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68DF73771CA5577A00F55328;
+			remoteInfo = HackatoN;
+		};
+		68DF73A01CA5577B00F55328 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68DF73701CA5577A00F55328 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68DF73771CA5577A00F55328;
+			remoteInfo = HackatoN;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		68DF73781CA5577A00F55328 /* HackatoN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackatoN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68DF737C1CA5577A00F55328 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		68DF737E1CA5577A00F55328 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		68DF737F1CA5577A00F55328 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		68DF73811CA5577A00F55328 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		68DF73821CA5577B00F55328 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		68DF73851CA5577B00F55328 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		68DF73881CA5577B00F55328 /* HackatoN.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackatoN.xcdatamodel; sourceTree = "<group>"; };
+		68DF738A1CA5577B00F55328 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		68DF738D1CA5577B00F55328 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		68DF738F1CA5577B00F55328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68DF73941CA5577B00F55328 /* HackatoNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackatoNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68DF73981CA5577B00F55328 /* HackatoNTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackatoNTests.m; sourceTree = "<group>"; };
+		68DF739A1CA5577B00F55328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68DF739F1CA5577B00F55328 /* HackatoNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackatoNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68DF73A31CA5577B00F55328 /* HackatoNUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackatoNUITests.m; sourceTree = "<group>"; };
+		68DF73A51CA5577B00F55328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68DF73751CA5577A00F55328 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68DF73911CA5577B00F55328 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68DF739C1CA5577B00F55328 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68DF736F1CA5577A00F55328 = {
+			isa = PBXGroup;
+			children = (
+				68DF737A1CA5577A00F55328 /* HackatoN */,
+				68DF73971CA5577B00F55328 /* HackatoNTests */,
+				68DF73A21CA5577B00F55328 /* HackatoNUITests */,
+				68DF73791CA5577A00F55328 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		68DF73791CA5577A00F55328 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68DF73781CA5577A00F55328 /* HackatoN.app */,
+				68DF73941CA5577B00F55328 /* HackatoNTests.xctest */,
+				68DF739F1CA5577B00F55328 /* HackatoNUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68DF737A1CA5577A00F55328 /* HackatoN */ = {
+			isa = PBXGroup;
+			children = (
+				68DF737E1CA5577A00F55328 /* AppDelegate.h */,
+				68DF737F1CA5577A00F55328 /* AppDelegate.m */,
+				68DF73811CA5577A00F55328 /* ViewController.h */,
+				68DF73821CA5577B00F55328 /* ViewController.m */,
+				68DF73841CA5577B00F55328 /* Main.storyboard */,
+				68DF738A1CA5577B00F55328 /* Assets.xcassets */,
+				68DF738C1CA5577B00F55328 /* LaunchScreen.storyboard */,
+				68DF738F1CA5577B00F55328 /* Info.plist */,
+				68DF73871CA5577B00F55328 /* HackatoN.xcdatamodeld */,
+				68DF737B1CA5577A00F55328 /* Supporting Files */,
+			);
+			path = HackatoN;
+			sourceTree = "<group>";
+		};
+		68DF737B1CA5577A00F55328 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68DF737C1CA5577A00F55328 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68DF73971CA5577B00F55328 /* HackatoNTests */ = {
+			isa = PBXGroup;
+			children = (
+				68DF73981CA5577B00F55328 /* HackatoNTests.m */,
+				68DF739A1CA5577B00F55328 /* Info.plist */,
+			);
+			path = HackatoNTests;
+			sourceTree = "<group>";
+		};
+		68DF73A21CA5577B00F55328 /* HackatoNUITests */ = {
+			isa = PBXGroup;
+			children = (
+				68DF73A31CA5577B00F55328 /* HackatoNUITests.m */,
+				68DF73A51CA5577B00F55328 /* Info.plist */,
+			);
+			path = HackatoNUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68DF73771CA5577A00F55328 /* HackatoN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68DF73A81CA5577B00F55328 /* Build configuration list for PBXNativeTarget "HackatoN" */;
+			buildPhases = (
+				68DF73741CA5577A00F55328 /* Sources */,
+				68DF73751CA5577A00F55328 /* Frameworks */,
+				68DF73761CA5577A00F55328 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HackatoN;
+			productName = HackatoN;
+			productReference = 68DF73781CA5577A00F55328 /* HackatoN.app */;
+			productType = "com.apple.product-type.application";
+		};
+		68DF73931CA5577B00F55328 /* HackatoNTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68DF73AB1CA5577B00F55328 /* Build configuration list for PBXNativeTarget "HackatoNTests" */;
+			buildPhases = (
+				68DF73901CA5577B00F55328 /* Sources */,
+				68DF73911CA5577B00F55328 /* Frameworks */,
+				68DF73921CA5577B00F55328 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68DF73961CA5577B00F55328 /* PBXTargetDependency */,
+			);
+			name = HackatoNTests;
+			productName = HackatoNTests;
+			productReference = 68DF73941CA5577B00F55328 /* HackatoNTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		68DF739E1CA5577B00F55328 /* HackatoNUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68DF73AE1CA5577B00F55328 /* Build configuration list for PBXNativeTarget "HackatoNUITests" */;
+			buildPhases = (
+				68DF739B1CA5577B00F55328 /* Sources */,
+				68DF739C1CA5577B00F55328 /* Frameworks */,
+				68DF739D1CA5577B00F55328 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68DF73A11CA5577B00F55328 /* PBXTargetDependency */,
+			);
+			name = HackatoNUITests;
+			productName = HackatoNUITests;
+			productReference = 68DF739F1CA5577B00F55328 /* HackatoNUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68DF73701CA5577A00F55328 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Artem Belkov";
+				TargetAttributes = {
+					68DF73771CA5577A00F55328 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = CT884K7983;
+					};
+					68DF73931CA5577B00F55328 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = CT884K7983;
+						TestTargetID = 68DF73771CA5577A00F55328;
+					};
+					68DF739E1CA5577B00F55328 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = CT884K7983;
+						TestTargetID = 68DF73771CA5577A00F55328;
+					};
+				};
+			};
+			buildConfigurationList = 68DF73731CA5577A00F55328 /* Build configuration list for PBXProject "HackatoN" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 68DF736F1CA5577A00F55328;
+			productRefGroup = 68DF73791CA5577A00F55328 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68DF73771CA5577A00F55328 /* HackatoN */,
+				68DF73931CA5577B00F55328 /* HackatoNTests */,
+				68DF739E1CA5577B00F55328 /* HackatoNUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68DF73761CA5577A00F55328 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68DF738E1CA5577B00F55328 /* LaunchScreen.storyboard in Resources */,
+				68DF738B1CA5577B00F55328 /* Assets.xcassets in Resources */,
+				68DF73861CA5577B00F55328 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68DF73921CA5577B00F55328 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68DF739D1CA5577B00F55328 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68DF73741CA5577A00F55328 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68DF73831CA5577B00F55328 /* ViewController.m in Sources */,
+				68DF73801CA5577A00F55328 /* AppDelegate.m in Sources */,
+				68DF73891CA5577B00F55328 /* HackatoN.xcdatamodeld in Sources */,
+				68DF737D1CA5577A00F55328 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68DF73901CA5577B00F55328 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68DF73991CA5577B00F55328 /* HackatoNTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68DF739B1CA5577B00F55328 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68DF73A41CA5577B00F55328 /* HackatoNUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		68DF73961CA5577B00F55328 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68DF73771CA5577A00F55328 /* HackatoN */;
+			targetProxy = 68DF73951CA5577B00F55328 /* PBXContainerItemProxy */;
+		};
+		68DF73A11CA5577B00F55328 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68DF73771CA5577A00F55328 /* HackatoN */;
+			targetProxy = 68DF73A01CA5577B00F55328 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		68DF73841CA5577B00F55328 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68DF73851CA5577B00F55328 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		68DF738C1CA5577B00F55328 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68DF738D1CA5577B00F55328 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68DF73A61CA5577B00F55328 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		68DF73A71CA5577B00F55328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		68DF73A91CA5577B00F55328 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HackatoN/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.artembelkov.HackatoN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		68DF73AA1CA5577B00F55328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HackatoN/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.artembelkov.HackatoN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		68DF73AC1CA5577B00F55328 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HackatoNTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.artembelkov.HackatoNTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HackatoN.app/HackatoN";
+			};
+			name = Debug;
+		};
+		68DF73AD1CA5577B00F55328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HackatoNTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.artembelkov.HackatoNTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HackatoN.app/HackatoN";
+			};
+			name = Release;
+		};
+		68DF73AF1CA5577B00F55328 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HackatoNUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.artembelkov.HackatoNUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HackatoN;
+			};
+			name = Debug;
+		};
+		68DF73B01CA5577B00F55328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HackatoNUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.artembelkov.HackatoNUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HackatoN;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68DF73731CA5577A00F55328 /* Build configuration list for PBXProject "HackatoN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68DF73A61CA5577B00F55328 /* Debug */,
+				68DF73A71CA5577B00F55328 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68DF73A81CA5577B00F55328 /* Build configuration list for PBXNativeTarget "HackatoN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68DF73A91CA5577B00F55328 /* Debug */,
+				68DF73AA1CA5577B00F55328 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		68DF73AB1CA5577B00F55328 /* Build configuration list for PBXNativeTarget "HackatoNTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68DF73AC1CA5577B00F55328 /* Debug */,
+				68DF73AD1CA5577B00F55328 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		68DF73AE1CA5577B00F55328 /* Build configuration list for PBXNativeTarget "HackatoNUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68DF73AF1CA5577B00F55328 /* Debug */,
+				68DF73B01CA5577B00F55328 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		68DF73871CA5577B00F55328 /* HackatoN.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				68DF73881CA5577B00F55328 /* HackatoN.xcdatamodel */,
+			);
+			currentVersion = 68DF73881CA5577B00F55328 /* HackatoN.xcdatamodel */;
+			path = HackatoN.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 68DF73701CA5577A00F55328 /* Project object */;
+}
