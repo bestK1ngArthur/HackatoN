@@ -28,6 +28,7 @@
 		6835BD071CA5DC9900316F14 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835BCF41CA5DC9900316F14 /* UIProgressView+AFNetworking.m */; };
 		6835BD081CA5DC9900316F14 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835BCF61CA5DC9900316F14 /* UIRefreshControl+AFNetworking.m */; };
 		6835BD091CA5DC9900316F14 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835BCF81CA5DC9900316F14 /* UIWebView+AFNetworking.m */; };
+		6851B08E1CA6D3ED0028CE38 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6851B08D1CA6D3ED0028CE38 /* iTunesArtwork@2x.png */; };
 		68D83A1A1CA6352700561D89 /* PickController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D83A191CA6352700561D89 /* PickController.m */; };
 		68D83A2B1CA63D9300561D89 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D83A2A1CA63D9300561D89 /* MapKit.framework */; };
 		68D83A2D1CA666F900561D89 /* TakeMeToTrip.json in Resources */ = {isa = PBXBuildFile; fileRef = 68D83A2C1CA666F900561D89 /* TakeMeToTrip.json */; };
@@ -342,6 +343,7 @@
 		6835BCF61CA5DC9900316F14 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		6835BCF71CA5DC9900316F14 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		6835BCF81CA5DC9900316F14 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		6851B08D1CA6D3ED0028CE38 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		68D83A181CA6352700561D89 /* PickController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickController.h; sourceTree = "<group>"; };
 		68D83A191CA6352700561D89 /* PickController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickController.m; sourceTree = "<group>"; };
 		68D83A2A1CA63D9300561D89 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -982,6 +984,7 @@
 		68DF737B1CA5577A00F55328 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6851B08D1CA6D3ED0028CE38 /* iTunesArtwork@2x.png */,
 				68D83A2E1CA6813500561D89 /* Countries */,
 				6835BCD11CA5DC9900316F14 /* Libs */,
 				68DF738C1CA5577B00F55328 /* LaunchScreen.storyboard */,
@@ -1353,6 +1356,7 @@
 				68D83BCB1CA6813600561D89 /* 44.gif in Resources */,
 				68D83B941CA6813600561D89 /* 21.gif in Resources */,
 				68D83B9B1CA6813600561D89 /* 216.gif in Resources */,
+				6851B08E1CA6D3ED0028CE38 /* iTunesArtwork@2x.png in Resources */,
 				68D83B281CA6813500561D89 /* 110.gif in Resources */,
 				68D83B871CA6813600561D89 /* 199.gif in Resources */,
 				68D83BC61CA6813600561D89 /* 4.gif in Resources */,
