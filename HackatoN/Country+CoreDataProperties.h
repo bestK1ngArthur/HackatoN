@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSNumber *countryID;
 
+@property (nullable, nonatomic, retain) NSNumber *cost;
+@property (nullable, nonatomic, retain) NSNumber *temperature;
+
+
 @property (nullable, nonatomic, retain) NSSet<NSManagedObject *> *towns;
 
 @end

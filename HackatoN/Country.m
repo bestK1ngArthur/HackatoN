@@ -11,7 +11,9 @@
 
 @implementation Country
 
-+ (Country *)addCountryWithName:(NSString *)name countryID:(NSNumber *)countryID {
++ (Country *)addCountryWithName:(NSString *)name
+                      countryID:(NSNumber *)countryID
+                    temperature:(NSNumber *)temperature {
     
     NSManagedObjectContext *managedObjectContext = [[DataManager sharedManager] managedObjectContext];
     
@@ -20,6 +22,12 @@
     
     country.name = name;
     country.countryID = countryID;
+    
+    country.cost = [NSNumber numberWithInteger:(arc4random() % 20000 + 10000)];
+    
+    if (temperature) {
+        country.temperature = temperature;
+    }
     
     return country;
 }

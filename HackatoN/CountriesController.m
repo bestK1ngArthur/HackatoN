@@ -47,7 +47,7 @@
     Country *country = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     cell.textLabel.text = country.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"id%ld", [country.countryID integerValue]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"id%ld", [country.cost integerValue]];
     
 }
 

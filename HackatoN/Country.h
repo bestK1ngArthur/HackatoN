@@ -13,7 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Country : NSManagedObject
 
-+ (Country *)addCountryWithName:(NSString *)name countryID:(NSNumber *)countryID;
++ (Country *)addCountryWithName:(NSString *)name
+                      countryID:(NSNumber *)countryID
+                    temperature:(NSNumber *)temperature;
 
 - (NSArray *)findTownsByID;
 

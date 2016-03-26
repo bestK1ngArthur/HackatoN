@@ -11,6 +11,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum {
+
+    TownTypeTravel    = 0,
+    TownTypeStill     = 1,
+    TownTypeActive    = 2,
+    TownTypeExtreme   = 3,
+    TownTypeEducation = 4,
+    TownTypeHealing   = 5
+    
+} TownType;
+
 @interface Town : NSManagedObject
 
 + (Town *)addTownWithName:(NSString *)name
@@ -18,7 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
                 countryID:(NSNumber *)countryID
                  latitude:(NSNumber *)latitude
                 longitude:(NSNumber *)longitude;
-- (NSString *)test;
 
 @end
 

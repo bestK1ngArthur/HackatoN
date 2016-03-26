@@ -15,12 +15,31 @@
 
 @interface AppDelegate ()
 
+@property (strong, nonatomic) NSMutableDictionary *temperatures;
+
 @end
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
++ (NSMutableDictionary *)sharedTemperatures {
+    
+    static NSMutableDictionary *temperatures = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        temperatures = [[NSMutableDictionary alloc] init];
+        
+    });
+    
+    return temperatures;
+    
+}
 
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.temperatures = [NSMutableDictionary dictionary];
+    
     // Deleting all instances of entity
     
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Country"];
@@ -38,7 +57,6 @@
     [[DataManager sharedManager].persistentStoreCoordinator executeRequest:delete
                                                                withContext:[DataManager sharedManager].managedObjectContext
                                                                      error:&deleteError];
-    
      
     // Finding json file
     
@@ -65,11 +83,11 @@
             
             if (![name isEqualToString:@"0"]) {
                 
-                Town *town = [Town addTownWithName:name
-                                            townID:[townDict objectForKey:@"id"]
-                                         countryID:townCountryID
-                                          latitude:[townDict objectForKey:@"latitude"]
-                                         longitude:[townDict objectForKey:@"longitude"]];
+                [Town addTownWithName:name
+                               townID:[townDict objectForKey:@"id"]
+                            countryID:townCountryID
+                             latitude:[townDict objectForKey:@"latitude"]
+                            longitude:[townDict objectForKey:@"longitude"]];
                 
             }
             
@@ -82,7 +100,8 @@
             NSLog(@"Parsing Country: %@", countryID);
             
             Country *country = [Country addCountryWithName:[countryDict objectForKey:@"name"]
-                                                 countryID:countryID];
+                                                 countryID:countryID
+                                               temperature:[countryDict objectForKey:@"temperature"]];
             
             NSArray * towns = [country findTownsByID];
             [country addTowns:[NSSet setWithArray:towns]];
@@ -102,7 +121,7 @@
         NSLog(@"Json file not found");
     
     }
-    
+
     return YES;
 }
 

@@ -9,6 +9,8 @@
 #import "Town.h"
 #import "DataManager.h"
 
+#import "AFNetworking.h"
+
 @implementation Town
 
 + (Town *)addTownWithName:(NSString *)name
@@ -20,22 +22,18 @@
     NSManagedObjectContext *managedObjectContext = [[DataManager sharedManager] managedObjectContext];
     
     Town *town = [NSEntityDescription insertNewObjectForEntityForName:@"Town"
-                                                     inManagedObjectContext: managedObjectContext];
+                                               inManagedObjectContext: managedObjectContext];
     
     town.name = name;
+    town.type = [NSNumber numberWithInt:(arc4random() % 6)];
     
     town.townID = townID;
     town.countryID = countryID;
     
     town.latitude = latitude;
     town.longitude = longitude;
-    
+        
     return town;
-}
-
-- (NSString *)test {
-    
-   return @"Test";
 }
 
 @end
