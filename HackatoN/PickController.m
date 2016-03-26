@@ -7,8 +7,21 @@
 //
 
 #import "PickController.h"
+#import <CoreMotion/CoreMotion.h>
+
+#define kUpdateInterval (1.0f / 60.0f)
 
 @interface PickController ()
+
+@property (assign, nonatomic) CGPoint currentPoint;
+@property (assign, nonatomic) CGPoint previousPoint;
+@property (assign, nonatomic) CGFloat pacmanXVelocity;
+@property (assign, nonatomic) CGFloat pacmanYVelocity;
+@property (assign, nonatomic) CGFloat angle;
+@property (assign, nonatomic) CMAcceleration acceleration;
+@property (strong, nonatomic) CMMotionManager  *motionManager;
+@property (strong, nonatomic) NSOperationQueue *queue;
+@property (strong, nonatomic) NSDate *lastUpdateTime;
 
 @end
 
@@ -16,7 +29,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.lastUpdateTime = [[NSDate alloc] init];
+    
+    self.currentPoint  = CGPointMake(0, 144);
+    self.motionManager = [[CMMotionManager alloc]  init];
+    self.queue         = [[NSOperationQueue alloc] init];
+    
+    self.motionManager.accelerometerUpdateInterval = kUpdateInterval;
+    
+    [self.motionManager startAccelerometerUpdatesToQueue:self.queue withHandler:
+     ^(CMAccelerometerData *accelerometerData, NSError *error) {
+         [(id) self setAcceleration:accelerometerData.acceleration];
+         [self performSelectorOnMainThread:@selector(update) withObject:nil waitUntilDone:NO];
+     }];
+    
+    [self.countryButton addTarget:self action:@selector(countryButtonBeginTouchRecord:) forControlEvents:UIControlEventTouchDown];
+    [self.countryButton addTarget:self action:@selector(countryButtonEndTouch:) forControlEvents:UIControlEventTouchUpInside];
+    [self.countryButton addTarget:self action:@selector(countryButtonEndTouch:) forControlEvents:UIControlEventTouchCancel];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +55,27 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+#pragma mark - Motion
+
+- (void)update {
+    
 }
-*/
+
+
+#pragma mark - Touches
+
+- (void)countryButtonBeginTouchRecord:(id)sender {
+    
+    self.countryButton.titleLabel.text = @"Pressed";
+    
+}
+
+- (void)countryButtonEndTouch:(id)sender {
+    
+    self.countryButton.titleLabel.text = @"No";
+    
+}
 
 @end

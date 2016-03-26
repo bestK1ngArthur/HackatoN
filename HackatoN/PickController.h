@@ -14,4 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *countryImageView;
 @property (weak, nonatomic) IBOutlet MKMapView *townMapView;
 
+@property (weak, nonatomic) IBOutlet UIButton *countryButton;
+@property (weak, nonatomic) IBOutlet UIButton *townButton;
+
 @end

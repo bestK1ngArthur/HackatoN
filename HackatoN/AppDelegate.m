@@ -15,7 +15,6 @@
 
 @interface AppDelegate ()
 
-@property (strong, nonatomic) NSMutableDictionary *temperatures;
 
 @end
 
@@ -37,11 +36,12 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    self.temperatures = [NSMutableDictionary dictionary];
+
+    // Setting status bar
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     // Deleting all instances of entity
-    
+    /*
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Country"];
     NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
     
@@ -122,6 +122,8 @@
     
     }
 
+    */
+    
     return YES;
 }
 

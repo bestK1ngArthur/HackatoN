@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="54Q-99-7a6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iNV-gx-qCI">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -56,13 +56,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jMr-8P-bWn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="jMr-8P-bWn">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Oiq-6P-00z"/>
                                 </constraints>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zch-eS-FcS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7j-0E-wny">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <color key="backgroundColor" red="0.17777742476527691" green="0.42158476515125826" blue="0.51092960858585856" alpha="0.42557010135135137" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="80"/>
+                                <state key="normal" title="Country">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0p9-vb-iMt">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="92"/>
+                                <state key="normal" title="Town">
+                                    <color key="titleColor" red="0.2263710159" green="0.57279214199999995" blue="0.70424117090000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zch-eS-FcS">
                                 <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="dae-ps-lg6"/>
@@ -71,16 +86,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0p9-vb-iMt" firstAttribute="leading" secondItem="whb-z3-DVW" secondAttribute="leadingMargin" constant="-20" id="0gw-jV-faO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jMr-8P-bWn" secondAttribute="trailing" constant="-20" id="1hg-Re-cp0"/>
+                            <constraint firstItem="0p9-vb-iMt" firstAttribute="top" secondItem="f7j-0E-wny" secondAttribute="bottom" id="89S-R8-gFM"/>
+                            <constraint firstItem="Zch-eS-FcS" firstAttribute="top" secondItem="f7j-0E-wny" secondAttribute="bottom" id="AF5-yv-QXF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zch-eS-FcS" secondAttribute="trailing" constant="-20" id="KPj-fg-Km4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0p9-vb-iMt" secondAttribute="trailing" constant="-20" id="LxG-Mt-H9e"/>
+                            <constraint firstItem="f7j-0E-wny" firstAttribute="top" secondItem="ftR-pq-kdB" secondAttribute="bottom" constant="-20" id="QeU-ej-SHP"/>
                             <constraint firstItem="jMr-8P-bWn" firstAttribute="top" secondItem="whb-z3-DVW" secondAttribute="topMargin" id="RmZ-j3-a6B"/>
                             <constraint firstItem="jMr-8P-bWn" firstAttribute="leading" secondItem="whb-z3-DVW" secondAttribute="leadingMargin" constant="-20" id="cyn-4c-y1l"/>
+                            <constraint firstItem="0p9-vb-iMt" firstAttribute="height" secondItem="f7j-0E-wny" secondAttribute="height" id="eg4-mn-fDV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f7j-0E-wny" secondAttribute="trailing" constant="-20" id="hPo-mY-GXr"/>
+                            <constraint firstItem="ZiU-NX-ZyZ" firstAttribute="top" secondItem="0p9-vb-iMt" secondAttribute="bottom" id="irt-jt-Hju"/>
                             <constraint firstItem="ZiU-NX-ZyZ" firstAttribute="top" secondItem="Zch-eS-FcS" secondAttribute="bottom" id="lga-cz-oOs"/>
                             <constraint firstItem="Zch-eS-FcS" firstAttribute="leading" secondItem="whb-z3-DVW" secondAttribute="leadingMargin" constant="-20" id="lut-Wx-pLd"/>
+                            <constraint firstItem="0p9-vb-iMt" firstAttribute="top" secondItem="jMr-8P-bWn" secondAttribute="bottom" id="uc5-I8-hMP"/>
+                            <constraint firstItem="f7j-0E-wny" firstAttribute="leading" secondItem="whb-z3-DVW" secondAttribute="leadingMargin" constant="-20" id="yl8-Bq-EQC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="countryButton" destination="f7j-0E-wny" id="mBl-Fq-2N0"/>
                         <outlet property="countryImageView" destination="jMr-8P-bWn" id="IF2-ta-jTk"/>
+                        <outlet property="townButton" destination="0p9-vb-iMt" id="2iJ-gK-eVh"/>
                         <outlet property="townMapView" destination="Zch-eS-FcS" id="gtN-Nw-Bhm"/>
                     </connections>
                 </viewController>
@@ -105,4 +132,7 @@
             <point key="canvasLocation" x="-308" y="400"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1.gif" width="447" height="302"/>
+    </resources>
 </document>

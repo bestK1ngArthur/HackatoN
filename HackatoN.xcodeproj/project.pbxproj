@@ -30,6 +30,14 @@
 		6835BD081CA5DC9900316F14 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835BCF61CA5DC9900316F14 /* UIRefreshControl+AFNetworking.m */; };
 		6835BD091CA5DC9900316F14 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835BCF81CA5DC9900316F14 /* UIWebView+AFNetworking.m */; };
 		68D83A1A1CA6352700561D89 /* PickController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D83A191CA6352700561D89 /* PickController.m */; };
+		68D83A231CA63B0800561D89 /* 0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68D83A1C1CA63B0800561D89 /* 0.gif */; };
+		68D83A241CA63B0800561D89 /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68D83A1D1CA63B0800561D89 /* 1.gif */; };
+		68D83A251CA63B0800561D89 /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68D83A1E1CA63B0800561D89 /* 2.gif */; };
+		68D83A261CA63B0800561D89 /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68D83A1F1CA63B0800561D89 /* 3.gif */; };
+		68D83A271CA63B0800561D89 /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68D83A201CA63B0800561D89 /* 4.gif */; };
+		68D83A281CA63B0800561D89 /* 5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68D83A211CA63B0800561D89 /* 5.gif */; };
+		68D83A291CA63B0800561D89 /* 6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68D83A221CA63B0800561D89 /* 6.gif */; };
+		68D83A2B1CA63D9300561D89 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D83A2A1CA63D9300561D89 /* MapKit.framework */; };
 		68DF737D1CA5577A00F55328 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF737C1CA5577A00F55328 /* main.m */; };
 		68DF73801CA5577A00F55328 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF737F1CA5577A00F55328 /* AppDelegate.m */; };
 		68DF73831CA5577B00F55328 /* TownsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF73821CA5577B00F55328 /* TownsController.m */; };
@@ -109,6 +117,14 @@
 		6835BCF81CA5DC9900316F14 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		68D83A181CA6352700561D89 /* PickController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickController.h; sourceTree = "<group>"; };
 		68D83A191CA6352700561D89 /* PickController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickController.m; sourceTree = "<group>"; };
+		68D83A1C1CA63B0800561D89 /* 0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 0.gif; sourceTree = "<group>"; };
+		68D83A1D1CA63B0800561D89 /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
+		68D83A1E1CA63B0800561D89 /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
+		68D83A1F1CA63B0800561D89 /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
+		68D83A201CA63B0800561D89 /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
+		68D83A211CA63B0800561D89 /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
+		68D83A221CA63B0800561D89 /* 6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 6.gif; sourceTree = "<group>"; };
+		68D83A2A1CA63D9300561D89 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		68DF73781CA5577A00F55328 /* HackatoN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackatoN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DF737C1CA5577A00F55328 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		68DF737E1CA5577A00F55328 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D83A2B1CA63D9300561D89 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,9 +246,24 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		68D83A1B1CA63B0800561D89 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				68D83A1C1CA63B0800561D89 /* 0.gif */,
+				68D83A1D1CA63B0800561D89 /* 1.gif */,
+				68D83A1E1CA63B0800561D89 /* 2.gif */,
+				68D83A1F1CA63B0800561D89 /* 3.gif */,
+				68D83A201CA63B0800561D89 /* 4.gif */,
+				68D83A211CA63B0800561D89 /* 5.gif */,
+				68D83A221CA63B0800561D89 /* 6.gif */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
 		68DF736F1CA5577A00F55328 = {
 			isa = PBXGroup;
 			children = (
+				68D83A2A1CA63D9300561D89 /* MapKit.framework */,
 				68DF737A1CA5577A00F55328 /* HackatoN */,
 				68DF73971CA5577B00F55328 /* HackatoNTests */,
 				68DF73A21CA5577B00F55328 /* HackatoNUITests */,
@@ -266,6 +298,7 @@
 		68DF737B1CA5577A00F55328 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				68D83A1B1CA63B0800561D89 /* Countries */,
 				6835BCD11CA5DC9900316F14 /* Libs */,
 				68DF738C1CA5577B00F55328 /* LaunchScreen.storyboard */,
 				68DF738A1CA5577B00F55328 /* Assets.xcassets */,
@@ -425,8 +458,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D83A291CA63B0800561D89 /* 6.gif in Resources */,
+				68D83A281CA63B0800561D89 /* 5.gif in Resources */,
+				68D83A251CA63B0800561D89 /* 2.gif in Resources */,
+				68D83A241CA63B0800561D89 /* 1.gif in Resources */,
+				68D83A231CA63B0800561D89 /* 0.gif in Resources */,
 				68DF738E1CA5577B00F55328 /* LaunchScreen.storyboard in Resources */,
+				68D83A261CA63B0800561D89 /* 3.gif in Resources */,
 				68DF738B1CA5577B00F55328 /* Assets.xcassets in Resources */,
+				68D83A271CA63B0800561D89 /* 4.gif in Resources */,
 				6835BCCC1CA5A39300316F14 /* TakeMeToTrip.json in Resources */,
 				68DF73861CA5577B00F55328 /* Main.storyboard in Resources */,
 			);
@@ -621,6 +661,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HackatoN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.artembelkov.HackatoN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -632,6 +673,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HackatoN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.artembelkov.HackatoN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
