@@ -7,21 +7,27 @@
 //
 
 #import "PickController.h"
+
 #import <CoreMotion/CoreMotion.h>
+
+#import "DataManager.h"
+
+#import "Town.h"
+#import "Country.h"
 
 #define kUpdateInterval (1.0f / 60.0f)
 
-@interface PickController ()
+@interface PickController () <MKMapViewDelegate>
 
-@property (assign, nonatomic) CGPoint currentPoint;
-@property (assign, nonatomic) CGPoint previousPoint;
-@property (assign, nonatomic) CGFloat pacmanXVelocity;
-@property (assign, nonatomic) CGFloat pacmanYVelocity;
 @property (assign, nonatomic) CGFloat angle;
 @property (assign, nonatomic) CMAcceleration acceleration;
 @property (strong, nonatomic) CMMotionManager  *motionManager;
 @property (strong, nonatomic) NSOperationQueue *queue;
 @property (strong, nonatomic) NSDate *lastUpdateTime;
+
+@property (strong, nonatomic) NSArray *countries;
+@property (strong, nonatomic) NSNumber *currentCountryID;
+@property (strong, nonatomic) NSArray *towns;
 
 @end
 
@@ -32,7 +38,6 @@
     
     self.lastUpdateTime = [[NSDate alloc] init];
     
-    self.currentPoint  = CGPointMake(0, 144);
     self.motionManager = [[CMMotionManager alloc]  init];
     self.queue         = [[NSOperationQueue alloc] init];
     
@@ -48,33 +53,187 @@
     [self.countryButton addTarget:self action:@selector(countryButtonEndTouch:) forControlEvents:UIControlEventTouchUpInside];
     [self.countryButton addTarget:self action:@selector(countryButtonEndTouch:) forControlEvents:UIControlEventTouchCancel];
     
+    [self.townButton addTarget:self action:@selector(townButtonBeginTouchRecord:) forControlEvents:UIControlEventTouchDown];
+    [self.townButton addTarget:self action:@selector(townButtonEndTouch:) forControlEvents:UIControlEventTouchUpInside];
+    [self.townButton addTarget:self action:@selector(townButtonEndTouch:) forControlEvents:UIControlEventTouchCancel];
+    
+    [self loadCountries];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - CoreData
 
+- (BOOL)loadCountries {
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Country" inManagedObjectContext:[DataManager sharedManager].managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    [fetchRequest setEntity:entity];
+    [fetchRequest setFetchBatchSize:1];
+    NSError *error;
+    NSMutableArray *mutableFetchResults = [[[DataManager sharedManager].managedObjectContext executeFetchRequest:fetchRequest error:&error] mutableCopy];
+    
+    if (mutableFetchResults == nil) {
+        
+        return NO;
+        
+    } else {
+        
+        [self setCountries:mutableFetchResults];
+        
+        return YES;
+    }
+    
+}
+
+- (BOOL)loadTowns {
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Town" inManagedObjectContext:[DataManager sharedManager].managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate  = [NSPredicate predicateWithFormat:@"countryID == %@", self.currentCountryID];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error;
+    NSMutableArray *mutableFetchResults = [[[DataManager sharedManager].managedObjectContext executeFetchRequest:fetchRequest error:&error] mutableCopy];
+    
+    if (mutableFetchResults == nil) {
+        
+        return NO;
+        
+    } else {
+        
+        [self setTowns:mutableFetchResults];
+        
+        return YES;
+    }
+    
+}
 
 #pragma mark - Motion
 
 - (void)update {
     
+    double shift = self.acceleration.x*self.acceleration.x + self.acceleration.y*self.acceleration.y + self.acceleration.z*self.acceleration.z;
+    
+    if ((arc4random() % (int)(shift)) > (arc4random() % (int)(shift/2))) {
+        
+        if ((self.countryButton.highlighted == YES) && (shift > 2)) {
+            
+            int index = arc4random() % [self.countries count];
+            Country *country = [self.countries objectAtIndex:index];
+            self.currentCountryID = country.countryID;
+            
+            self.countryLabel.text = country.name;
+            self.costLabel.text = [NSString stringWithFormat:@"%@₽", [country.cost stringValue]];
+            self.countryImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.gif", [country.countryID stringValue]]];
+            
+            if ([country.temperature doubleValue]) {
+                self.temperatureLabel.text = [NSString stringWithFormat:@"%.1f°C", [country.temperature doubleValue]];
+            }
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [self loadTowns];
+                
+                if (self.towns) {
+                    
+                    int index = arc4random() % [self.towns count];
+                    Town *town = [self.towns objectAtIndex:index];
+                    
+                    self.townLabel.text = town.name;
+                    self.typeLabel.text = [Town stringFromType:(TownType)[town.type integerValue]];
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        
+                        [self zoomTownToLocation:town];
+                        
+                    });
+                }
+                
+            });
+            
+            
+        } else if ((self.townButton.highlighted == YES) && (shift > 2)) {
+            
+            if (self.towns) {
+                
+                int index = arc4random() % [self.towns count];
+                Town *town = [self.towns objectAtIndex:index];
+                
+                self.townLabel.text = town.name;
+                self.typeLabel.text = [Town stringFromType:(TownType)[town.type integerValue]];
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    [self zoomTownToLocation:town];
+                    
+                });
+            }
+            
+        }
+        
+    }
+    
 }
 
+#pragma mark - Map
+
+- (void)zoomTownToLocation:(Town *)town {
+    
+    float spanX = 0.18725;
+    float spanY = 0.18725;
+    MKCoordinateRegion region;
+    region.center.latitude = [town.latitude doubleValue];
+    region.center.longitude = [town.longitude doubleValue];
+    region.span.latitudeDelta = spanX;
+    region.span.longitudeDelta = spanY;
+    
+    [self.townMapView setRegion:region animated:YES];
+}
 
 #pragma mark - Touches
 
 - (void)countryButtonBeginTouchRecord:(id)sender {
     
-    self.countryButton.titleLabel.text = @"Pressed";
+    self.countryButton.highlighted = YES;
+    self.countryLabel.textColor = [UIColor lightTextColor];
     
 }
 
 - (void)countryButtonEndTouch:(id)sender {
     
-    self.countryButton.titleLabel.text = @"No";
+    self.countryButton.highlighted = NO;
+    self.countryLabel.textColor = [UIColor whiteColor];
+    
+}
+
+- (void)townButtonBeginTouchRecord:(id)sender {
+    
+    self.townButton.highlighted = YES;
+    self.townLabel.textColor = [UIColor colorWithRed: 197 /255.f
+                                               green: 229 /255.f
+                                                blue: 252 /255.f
+                                               alpha: 1.f];
+
+    
+}
+
+- (void)townButtonEndTouch:(id)sender {
+    
+    self.townButton.highlighted = NO;
+    self.townLabel.textColor = [UIColor colorWithRed: 122 /255.f
+                                               green: 170 /255.f
+                                                blue: 225 /255.f
+                                               alpha: 1.f];
     
 }
 

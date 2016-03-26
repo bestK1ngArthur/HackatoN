@@ -23,9 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *latitude;
 @property (nullable, nonatomic, retain) NSNumber *longitude;
 
-@property (nullable, nonatomic, retain) NSNumber *temperature;
-@property (nullable, nonatomic, retain) NSNumber *cost;
-
 @property (nullable, nonatomic, retain) NSNumber *type;
 
 @end

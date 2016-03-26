@@ -24,10 +24,7 @@
     country.countryID = countryID;
     
     country.cost = [NSNumber numberWithInteger:(arc4random() % 20000 + 10000)];
-    
-    if (temperature) {
-        country.temperature = temperature;
-    }
+    country.temperature = temperature;
     
     return country;
 }

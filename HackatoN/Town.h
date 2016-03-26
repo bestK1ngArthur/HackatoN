@@ -30,6 +30,8 @@ typedef enum {
                  latitude:(NSNumber *)latitude
                 longitude:(NSNumber *)longitude;
 
++ (NSString *)stringFromType:(TownType)type;
+
 @end
 
 NS_ASSUME_NONNULL_END

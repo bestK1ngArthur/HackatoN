@@ -72,7 +72,7 @@
         // Parsing countries
         
         NSArray *countries = [dictionary objectForKey:@"countries"];
-        NSArray *towns = [dictionary objectForKey:@"cities"];
+        NSArray *towns = [dictionary objectForKey:@"towns"];
 
         for (NSDictionary *townDict in towns) {
             
@@ -121,7 +121,6 @@
         NSLog(@"Json file not found");
     
     }
-
     */
     
     return YES;

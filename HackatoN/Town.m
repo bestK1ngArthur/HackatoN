@@ -36,4 +36,34 @@
     return town;
 }
 
++ (NSString *)stringFromType:(TownType)type {
+    
+    if (type == TownTypeTravel) {
+        
+        return @"travel";
+        
+    } else if (type == TownTypeStill) {
+        
+        return @"still";
+        
+    } else if (type == TownTypeActive) {
+        
+        return @"active";
+        
+    } else if (type == TownTypeExtreme) {
+        
+        return @"extreme";
+        
+    } else if (type == TownTypeEducation) {
+        
+        return @"education";
+        
+    } else if (type == TownTypeHealing) {
+        
+        return @"healing";
+    }
+    
+    return @"";
+}
+
 @end

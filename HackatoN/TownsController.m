@@ -47,7 +47,7 @@
     Town *town = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     cell.textLabel.text = town.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"id%ld", [town.townID integerValue]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"id%ld", [town.countryID integerValue]];
     
 }
 
