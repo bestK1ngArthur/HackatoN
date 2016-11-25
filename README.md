@@ -1,4 +1,5 @@
 # HackatoN'16
+![Platform](https://img.shields.io/badge/platform-iOS-lightgray.svg?style=flat)
 
 Writing app on 24-hour [HackatoN'16](https://vk.com/hackathon2016) in BMSTU
 
